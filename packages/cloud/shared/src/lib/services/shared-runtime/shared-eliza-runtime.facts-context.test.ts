@@ -248,7 +248,9 @@ test("public facts handler keeps complete Core context while capture is off", as
     expect(captureChecks).toBeGreaterThan(0);
     const calls = factsCalls + otherLargeCalls + actionCalls + contextCalls;
     expect(result.usage).toMatchObject({
-      promptTokens: calls, completionTokens: calls, totalTokens: calls * 2,
+      promptTokens: calls,
+      completionTokens: calls,
+      totalTokens: calls * 2,
     });
   } finally {
     initialization.mockRestore();
